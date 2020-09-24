@@ -23,7 +23,11 @@ namespace BlazorApp.Client
             var appConfig = new BaseAddress(baseAddress);
             builder.Services.AddSingleton(appConfig);
 
-            var auth0Config = builder.Configuration.GetSection("Auth0").Get<Auth0Config>();
+            var auth0Config = new Auth0Config(){
+                Authority = "https://strife.eu.auth0.com/",
+                ClientId = "QQrtpAEFMnniV2rkfACG0hlC6S3U7JC3"
+            };
+
             builder.Services.AddSingleton(auth0Config);
 
             builder.Services.AddScoped<CustomAuthorizationMessageHandler>();

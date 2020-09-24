@@ -1,10 +1,13 @@
 ﻿@inherits LayoutComponentBase
+@using BlazorApp.Client.Shared.Auth
 
 <div class="sidebar">
     <NavMenu />
 </div>
 
 <div class="main">
+    <LoginDisplay />
+    <LogoutDisplay />
     <div class="top-row px-4">
         <a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>
     </div>
